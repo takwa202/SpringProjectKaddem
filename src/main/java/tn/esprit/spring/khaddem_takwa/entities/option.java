@@ -1,6 +1,6 @@
 package tn.esprit.spring.khaddem_takwa.entities;
 
-public enum Option {
+public enum option {
    GAMIX,SE,SIM,NIDS
 
 }

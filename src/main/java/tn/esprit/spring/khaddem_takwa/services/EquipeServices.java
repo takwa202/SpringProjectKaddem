@@ -35,12 +35,12 @@ public class EquipeServices implements IEquipeServices{
     }
 
     @Override
-    public Equipe retrieveEquipe(Long idEquipe) {
+    public Equipe retrieveEquipe(Integer idEquipe) {
         return equiperepositery.findById(idEquipe).get();
     }
 
    @Override
-    public void deleteEquipe(Long idEquipe) {
+    public void deleteEquipe(Integer idEquipe) {
 equiperepositery.deleteById(idEquipe);
     }
 }

@@ -33,11 +33,11 @@ public class ContratServices implements  IContratServices{
 
     @Override
     public Contrat retrieveContrat(Integer idContrat) {
-        return contratrepositery.findById(Long.valueOf(idContrat)).get();
+        return contratrepositery.findById(idContrat).get();
     }
 
     @Override
     public void removeContrat(Integer idContrat) {
-        contratrepositery.deleteById(Long.valueOf(idContrat));
+        contratrepositery.deleteById(idContrat);
     }
 }

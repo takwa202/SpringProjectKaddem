@@ -1,6 +1,7 @@
 package tn.esprit.spring.khaddem_takwa.services;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.khaddem_takwa.entities.DetailEquipe;
 import tn.esprit.spring.khaddem_takwa.repositery.DetailEquiperepositery;
@@ -13,6 +14,8 @@ import java.util.List;
 @Builder
 @Service
 public class DetailsEquipeService implements IDetailServices {
+    @Autowired
+
     DetailEquiperepositery detailEquiperepositery;
 
     @Override

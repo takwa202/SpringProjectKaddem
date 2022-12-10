@@ -16,31 +16,17 @@ import java.util.Set;
 
 @Table( name = "Universite")
 public class Universite implements Serializable {
-
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idUniv")
     private Integer idUniv; // Clé primaire
     private String nomUniv;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<Departement> departement;
+    private Set<Departement> departments;
 
-    public Integer getIdUniv() {
-        return idUniv;
-    }
 
-    public void setIdUniv(Integer idUniv) {
-        this.idUniv = idUniv;
-    }
 
-    public String getNomUniv() {
-        return nomUniv;
-    }
-
-    public void setNomUniv(String nomUniv) {
-        this.nomUniv = nomUniv;
-    }
 
 // Constructeur et accesseurs (getters) et mutateurs (setters)
 }

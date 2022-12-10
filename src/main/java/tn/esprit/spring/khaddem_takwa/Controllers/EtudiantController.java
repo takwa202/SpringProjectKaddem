@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/etudiant")
 public class EtudiantController {
-
+    @Autowired
     IEtudiantServices etudiantService;
 
 
@@ -28,6 +28,13 @@ public class EtudiantController {
     @GetMapping("/retrieve-etudiant/{etudiant-id}")
     public Etudiant retrieveEtudiant(@PathVariable("etudiant-id") Long idEtudiant) {
         return etudiantService.retrieveEtudiant(idEtudiant.intValue());
+    }
+    // http://localhost:8089/kaddem/etudiant/getEtudiantsByDepartement/1
+    @GetMapping ("/getEtudiantsByDepartement/{departementt-id}")
+    public List<Etudiant> getEtudiantsByDepartement(@PathVariable("departementt-id")Integer idDepart)
+    {
+
+        return etudiantService.getEtudiantsByDepartement(idDepart);
     }
 
     // http://localhost:8089/kaddem/etudiant/add-etudiant
@@ -55,4 +62,33 @@ public class EtudiantController {
     {
         etudiantService.assignEtudiantToDepartment(idEtudiant,idDepart);
     }
+
+    // http://localhost:8089/kaddem/etudiant/add-AndAssignEtudiantTo-Equipe-AndContract/1/1
+    @PostMapping ("/add-AndAssignEtudiantTo-Equipe-AndContract/{Contract-id}/{Equipe-id}")
+    public void addAndAssignEtudiantToEquipeAndContract(@RequestBody Etudiant e,@PathVariable("Contract-id")Integer idContract ,
+                                           @PathVariable("Equipe-id")Integer idEquipe)
+    {
+        etudiantService.addAndAssignEtudiantToEquipeAndContract(e,idContract,idEquipe);
+    }
+
+
+
+    //***********************************************************************************//
+    //my tests
+    // http://localhost:8089/kaddem/etudiant/retrieve-EtudiantByname/{name}
+    /*@GetMapping("/retrieve-EtudiantByname/{etudiant-prnm}")
+    public List<Etudiant> retrieveEtudiantByname(@PathVariable("etudiant-prnm")String prenomE ) {
+        List<Etudiant> listEtudiants = etudiantService.retrieveEtudiantByname(prenomE);
+        return listEtudiants ;
+    }
+
+    // http://localhost:8089/kaddem/etudiant/retrieve-EtudiantByiddep/{id}
+    @GetMapping("/retrieve-EtudiantByiddep/{etudiant-id}")
+    public List<Etudiant> retrieveEtudiantBydepid(@PathVariable("etudiant-id")String idDepat ) {
+        List<Etudiant> listEtudiants = etudiantService.retrieveEtudiantBydepid(idDepat);
+        return listEtudiants ;
+    }
+
+*/
+
 }

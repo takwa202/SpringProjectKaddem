@@ -7,7 +7,7 @@ import tn.esprit.spring.khaddem_takwa.entities.Equipe;
 import java.util.List;
 @Repository
 
-public interface Equiperepositery  extends JpaRepository<Equipe, Long> {
+public interface Equiperepositery  extends JpaRepository<Equipe, Integer> {
 
 
 }

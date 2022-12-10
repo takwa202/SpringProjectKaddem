@@ -14,8 +14,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 
-
-
 @Table( name = "Departement")
 public class Departement implements Serializable {
 
@@ -23,15 +21,13 @@ public class Departement implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="idDepart")
-    private Integer idDepart; // Clé primaire
+    private Integer idDepart;
     private String nomDepat;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="departement")
     @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="departement")
     private Set<Etudiant> etudiant;
 
-
-// Constructeur et accesseurs (getters) et mutateurs (setters)
 }
 
 

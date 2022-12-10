@@ -13,4 +13,5 @@ public interface IDepartementServices {
     Departement updateDepartement (Departement d);
 
     Departement retrieveDepartement (Integer idDepart);
+    public void assignUniversiteToDepartement (Integer idUniversite , Integer idDepartement);
 }

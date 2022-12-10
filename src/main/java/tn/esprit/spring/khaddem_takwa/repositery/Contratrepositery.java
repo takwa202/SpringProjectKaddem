@@ -6,5 +6,6 @@ import tn.esprit.spring.khaddem_takwa.entities.Contrat;
 @Repository
 
 
-public interface Contratrepositery  extends JpaRepository<Contrat, Long> {
+public interface Contratrepositery  extends JpaRepository<Contrat, Integer> {
+
 }

@@ -1,11 +1,12 @@
 package tn.esprit.spring.khaddem_takwa.entities;
-import lombok.*;
-import org.hibernate.annotations.Type;
-import org.springframework.stereotype.Repository;
+import com.fasterxml.jackson.databind.DatabindException;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+import lombok.*;
+
 
 @Entity
 @Getter
@@ -13,11 +14,9 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-@Table( name = "Contrat")
 public class Contrat implements Serializable {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idContrat")
     private Integer idContrat; // Clé primaire
     @Temporal (TemporalType.DATE)
@@ -29,10 +28,8 @@ public class Contrat implements Serializable {
 
     private String nomE;
     @Enumerated(EnumType.STRING)
-
     private Specialite specialite;
-
     @ManyToOne
     Etudiant etudiant;
-
 }
+

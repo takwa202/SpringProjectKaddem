@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.spring.khaddem_takwa.entities.Universite;
 @Repository
 
-public interface Universiterepositery extends JpaRepository<Universite, Long> {
+public interface Universiterepositery extends JpaRepository<Universite, Integer> {
 
 
 }

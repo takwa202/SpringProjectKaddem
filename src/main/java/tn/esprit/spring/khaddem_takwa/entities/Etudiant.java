@@ -1,24 +1,26 @@
 package tn.esprit.spring.khaddem_takwa.entities;
+
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
-import org.hibernate.annotations.Type;
-import org.springframework.stereotype.Repository;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import javax.swing.text.html.Option;
 import java.io.Serializable;
 import java.util.Set;
+
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 
 @Table( name = "Etudiant")
 public class Etudiant implements Serializable {
-
-
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="idEtudiant")
@@ -26,15 +28,15 @@ public class Etudiant implements Serializable {
     private String prenomE;
     private String nomE;
     @Enumerated(EnumType.STRING)
-    private Option option;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant")
-    private Set<Contrat> contrat;
+    private option op;
 
+    //*******join
+    @JsonIgnore
     @ManyToOne
     Departement departement;
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant")
+    private Set<Contrat> contrat;
     @ManyToMany(cascade = CascadeType.ALL)
-    @JsonIgnore
     private Set<Equipe> equipe;
-// Constructeur et accesseurs (getters) et mutateurs (setters)
+
 }

@@ -15,7 +15,7 @@ import java.util.Set;
 @Builder
 
 
-@Table( name = "DetailEquipe")
+@Table( name = "Equipe")
 public class Equipe implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -28,9 +28,8 @@ public class Equipe implements Serializable {
     @OneToOne
     private DetailEquipe detailEquipe ;
 
-    @ManyToMany(mappedBy="equipe", cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private Set<Etudiant> etudiant;
-
 
 // Constructeur et accesseurs (getters) et mutateurs (setters)
 }

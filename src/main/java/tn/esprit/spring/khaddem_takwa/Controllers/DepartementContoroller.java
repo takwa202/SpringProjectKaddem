@@ -44,4 +44,12 @@ public class DepartementContoroller {
         return Departement;
     }
 
+    // http://localhost:8089/kaddem/departement/affecter-university-departement/{university-id}/{university-id}
+    @PostMapping ("/affecter-university-departement/{university-id}/{department-id}")
+    public void assignUniversiteToDepartement(@PathVariable("university-id")Integer idUniv ,
+                                              @PathVariable("department-id")Integer idDepart)
+    {
+        departementServices.assignUniversiteToDepartement(idUniv,idDepart);
+    }
+
 }

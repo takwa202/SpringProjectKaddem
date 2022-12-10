@@ -21,7 +21,7 @@ import java.util.Set;
 public class UniversiteServices implements IUniversiteServices{
     @Autowired
     Universiterepositery universiterepositery;
-    Departementrepositery departementrepositery;
+
     @Override
     public List<Universite> retrieveAllUniversites() {
         return universiterepositery.findAll();
@@ -39,18 +39,13 @@ public class UniversiteServices implements IUniversiteServices{
 
     @Override
     public Universite retrieveUniversite(Integer idUniversite) {
-        return universiterepositery.findById(Long.valueOf(idUniversite)).get();
+        return universiterepositery.findById(idUniversite).get();
     }
     @Override
     public void deleteUniversite(Integer idUniversite) {
-        universiterepositery.deleteById (Long.valueOf(idUniversite)) ;
+        universiterepositery.deleteById (idUniversite) ;
     }
 
-    @Override
-    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement) {
-        Universite et = universiterepositery.findById(Long.valueOf(idUniversite)).get();
-        Departement d = departementrepositery.findById(idDepartement).get();
-        et.setDepartement((Set<Departement>) d);
-        universiterepositery.save(et);
-}
+
+
 }
