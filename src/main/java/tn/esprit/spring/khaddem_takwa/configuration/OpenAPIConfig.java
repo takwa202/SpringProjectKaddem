@@ -1,4 +1,4 @@
-package tn.esprit.spring.khaddem.configuration;
+package tn.esprit.spring.khaddem_takwa.configuration;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
@@ -19,10 +19,10 @@ public class OpenAPIConfig {
     }
 
     public Contact contactAPI() {
-        Contact contact = new Contact().name("Ghassen Hammouda").email("ghassen.hammouda@esprit.tn").url("https://www.linkedin.com/in/ghassen-hammouda-97859996/");
+        Contact contact = new Contact().name("Lassoued Takwa").email("takwa.lassoued@esprit.tn").url("https://www.google.com/");
         return contact;
     }
-    @Bean
+   /* @Bean
     public GroupedOpenApi productPublicApi() {
         return GroupedOpenApi.builder()
 
@@ -31,5 +31,5 @@ public class OpenAPIConfig {
                 .pathsToExclude("**")
                 .build();
 
-    }
+    }*/
 }
